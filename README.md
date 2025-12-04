@@ -11,7 +11,7 @@
 
 <p>
 This guide enables <strong>full camera support</strong> in Orca Slicer for all Creality Hi-Series printers.<br>
-If your HiOS camera doesn't appear in Orca, this fix forces Orca to accept the correct MJPEG stream.<br><br>
+If your HiOS camera doesn't appear in Orca, this fix forces Orca to accept the proper MJPEG stream.<br><br>
 Orca will <strong>NOT</strong> auto-detect the correct camera type unless this manual URL is entered.
 </p>
 
@@ -19,7 +19,7 @@ Orca will <strong>NOT</strong> auto-detect the correct camera type unless this m
 
 <h2>✅ Working Camera Stream URL</h2>
 
-<p>Use this in Orca:</p>
+<p>Enter this in Orca Slicer:</p>
 
 <pre>
 http://&lt;your_printer_IP&gt;:8000/webcam/?action=stream
@@ -28,7 +28,7 @@ http://&lt;your_printer_IP&gt;:8000/webcam/?action=stream
 <ul>
   <li>✔ Works on all HiOS versions</li>
   <li>✔ Smooth low-latency MJPEG stream</li>
-  <li>✔ Compatible with Orca’s Camera Preview & Timelapse</li>
+  <li>✔ Compatible with Orca camera preview & timelapse</li>
 </ul>
 
 <hr>
@@ -40,7 +40,7 @@ http://&lt;your_printer_IP&gt;:8000/webcam/?action=stream
   <li>Go to <strong>Printer Settings</strong> (wrench icon)</li>
   <li>Select <strong>Machine → Cameras</strong></li>
   <li>Add a camera or edit the existing one</li>
-  <li>Use the following values:</li>
+  <li>Enter the following values:</li>
 </ol>
 
 <h3>Camera URL Stream</h3>
@@ -56,20 +56,74 @@ http://&lt;your_printer_IP&gt;:8000/webcam/?action=stream
 <h3>Stream Type</h3>
 <pre>HTTP page</pre>
 
-
-<img width="617" height="641" alt="image" src="https://github.com/user-attachments/assets/730b37a8-2135-4f39-ae75-d1c35bcd878f" />
-
-  
-<img width="1027" height="586" alt="image" src="https://github.com/user-attachments/assets/3a482d23-127b-4e52-b476-b11dc9784786" />
-
-
+<p align="center">
+  <img height="350" src="https://github.com/user-attachments/assets/730b37a8-2135-4f39-ae75-d1c35bcd878f" />
+  <img height="350" src="https://github.com/user-attachments/assets/3a482d23-127b-4e52-b476-b11dc9784786" />
+</p>
 
 <h2 align="center"><font color="red"><b>I am using a Creality Nebula Cam</b></font></h2>
 
+<p align="center">
+  <img width="538" height="447" src="https://github.com/user-attachments/assets/6fa9e694-81fb-443f-a470-29444957a67a" />
+</p>
 
+<hr>
 
+<h2>⚙️ Essential Klipper Macros for Creality Hi + Orca Slicer</h2>
+
+<p>
+Below are the most commonly used and fully compatible <strong>Klipper macros</strong> for the Creality Hi, Hi-Pro, K1, K1C, and K1 Max when running Orca Slicer.<br>
+These macros ensure reliable homing, accurate bed leveling, Z-offset tuning, and safe machine operation.
+</p>
+
+<hr>
+
+<h3>🏠 HOME ALL</h3>
+<pre>G28</pre>
+
+<h3>🧭 HOME XY ONLY</h3>
+<pre>G28 X Y</pre>
+
+<h3>📏 PROBE / BED MESH</h3>
+<p>Runs full automatic bed leveling.</p>
+<pre>BED_MESH_CALIBRATE</pre>
+
+<h3>📐 LOAD SAVED MESH</h3>
+<pre>BED_MESH_PROFILE LOAD=default</pre>
+
+<h3>🛠 SAVE CONFIG</h3>
+<p>Saves Z-offset and calibration values.</p>
+<pre>SAVE_CONFIG</pre>
+
+<h3>⬇️ Z-OFFSET ADJUSTMENT</h3>
+<pre>
+SET_GCODE_OFFSET Z=+0.01
+SET_GCODE_OFFSET Z=-0.01
+</pre>
+
+<h3>🧼 NOZZLE CLEANING</h3>
+<p>(If supported)</p>
+<pre>NOZZLECLEAN</pre>
+
+<h3>🛑 EMERGENCY STOP</h3>
+<pre>M112</pre>
+
+<h3>🔄 CANCEL PRINT</h3>
+<pre>CANCEL_PRINT</pre>
+
+<hr>
+
+<h2 align="center"><strong>📺 Visit & Support @3dmekids on YouTube</strong></h2>
 
 <p align="center">
-  <img width="538" height="447" alt="image" src="https://github.com/user-attachments/assets/6fa9e694-81fb-443f-a470-29444957a67a" />
+  <a href="https://www.youtube.com/@3dmekids" target="_blank">
+    <img width="300" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">
+  </a>
+</p>
 
-<h3
+<p align="center">
+  <strong>Please Like 👍 — Subscribe 🔔 — Share ❤️</strong><br>
+  Your support helps us continue creating Creality Hi guides, fixes, and 3D-printing tutorials!
+</p>
+
+<hr>
